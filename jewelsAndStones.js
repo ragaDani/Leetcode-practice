@@ -7,6 +7,7 @@
  */
 function jewelsinstones(J,S){
     let jewels = new Map();
+    let sum = 0;
     for(i in J){
         jewels.set(J[i],0);
     }
@@ -15,7 +16,10 @@ function jewelsinstones(J,S){
             jewels.set(S[i],(jewels.get(S[i])+1));
         }
     }
-    return jewels;
+    for(i in J){
+        sum+=jewels.get(J[i]);
+    }
+    return sum;
 }
 
 // Testing the function
